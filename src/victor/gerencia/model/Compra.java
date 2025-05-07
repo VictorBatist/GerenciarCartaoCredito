@@ -1,6 +1,6 @@
 package victor.gerencia.model;
 
-public class Compra {
+public class Compra implements Comparable<Compra>{
     private String descricao;
     private double preco;
 
@@ -20,5 +20,10 @@ public class Compra {
     @Override
     public String toString() {
         return "Compra{ descricao: " + descricao + " preco: " + preco + " }";
+    }
+
+    @Override
+    public int compareTo(Compra outroCompra) {
+        return Double.valueOf(this.preco).compareTo(Double.valueOf(outroCompra.preco));
     }
 }
